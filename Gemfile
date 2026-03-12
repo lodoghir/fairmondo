@@ -7,7 +7,7 @@ gem 'activerecord-session_store' # sessions in activerecord
 
 # Plattforms Ruby
 platforms :ruby do
-  gem 'mini_racer' # js runtime (replaced therubyracer)
+  gem 'mini_racer', '~> 0.4.0' # js runtime (replaced therubyracer)
   gem 'pg', '~> 0.21' # postgres
 end
 
@@ -94,7 +94,7 @@ gem 'kontoapi-ruby' # KontoAPI checks bank data
 gem 'ibanomat' # accound number to IBAN
 gem 'memoist' # Support for memoization
 gem 'rails_admin', '>= 0.6.6' # Administrative backend
-gem 'rails_admin_statistics', github: 'KonstantinKo/rails_admin_statistics'
+gem 'rails_admin_statistics', git: 'https://github.com/KonstantinKo/rails_admin_statistics.git'
 gem 'rails_admin_nested_set'
 gem 'rack-rewrite' # Redirects
 gem 'nokogiri'
@@ -109,7 +109,7 @@ gem 'exception_notification'
 # ---------- API ----------
 
 # Gem for connecting to FastBill Automatic
-gem 'fastbill-automatic', github: 'marcaltmann/fastbill-automatic'
+gem 'fastbill-automatic', git: 'https://github.com/marcaltmann/fastbill-automatic.git'
 
 gem 'savon' # interacing with other SOAP apis:
 gem 'rubyntlm' # https://github.com/savonrb/savon/issues/593
@@ -182,3 +182,5 @@ group :development, :test, :staging do
   gem 'factory_bot_rails', '~> 4.11.1'
   gem 'faker'
 end
+
+gem 'ffi', '~> 1.15.0'
