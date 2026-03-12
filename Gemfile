@@ -7,13 +7,14 @@ gem 'activerecord-session_store' # sessions in activerecord
 
 # Plattforms Ruby
 platforms :ruby do
-  gem 'therubyracer' # js runtime
+  gem 'mini_racer' # js runtime (replaced therubyracer)
   gem 'pg', '~> 0.21' # postgres
 end
 
 # ----------  Model ----------
 
-gem 'paperclip', '4.2.4'
+# paperclip removed — use ActiveStorage (available in Rails 5.2+)
+# NOTE: ActiveStorage not available in Rails 5.1 — manual migration needed when upgrading to 5.2+
 gem 'money-rails', '> 0.12.0' # dealing with money in activerecord
 gem 'monetize' # parsing money
 gem 'enumerize', '>= 0.5.1' # enums as symbols in ar
@@ -38,7 +39,7 @@ gem 'jbuilder'
 
 ## CSS
 gem 'susy'
-gem 'sass-rails'
+gem 'sass-rails' # kept for Rails 5.1 compatibility — replace with dartsass-rails in Rails 7+
 gem 'bourbon', '4.3.4'
 gem 'font-awesome-rails', '>= 4.2.0.0'
 gem 'sprite-factory'
@@ -48,10 +49,10 @@ gem 'chunky_png' # needed for sprite-factory
 gem 'jquery-ui-rails', '~> 5.0.4'
 gem 'qtip2-jquery-rails'
 gem 'i18n-js'
-gem 'coffee-rails'
+# coffee-rails removed — use plain JS or ESM
 gem 'therubyrhino'
 gem 'selectivizr-rails'
-gem 'uglifier'
+gem 'uglifier' # kept for Rails 5.1 compatibility — replace with terser via jsbundling-rails in Rails 7+
 gem 'modernizr-rails'
 gem 'tinymce-rails', '4.3.8'
 gem 'tinymce-rails-langs', '4.20140129'
@@ -81,7 +82,7 @@ gem 'premailer-rails'
 gem 'sidekiq'
 gem 'sidekiq-scheduler'
 gem 'sinatra', '>= 1.3.0', require: nil
-gem 'delayed_paperclip', '2.9.2'
+# delayed_paperclip removed — use ActiveStorage with ActiveJob (Rails 5.2+)
 gem 'bluepill' # legacy, remove when eye stable
 gem 'eye'
 gem 'redis-namespace'
